@@ -1,0 +1,8 @@
+{
+  "name": "Roblox ASMR Squishy Gacha",
+  "description": "Roblox風 ASMRスクイーズ開封ガチャゲーム。テープカットや袋開封のリアルな音フェチ体験と、もっちり・ぷにぷにスクイーズの触感・快音を楽しもう！",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
