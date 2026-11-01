@@ -2,6 +2,17 @@
 
 All notable changes to the Roblox ASMR Squishy Gacha project are documented below.
 
+## [1.1.0] - 2026-10-31
+
+### Added
+- **GitHub Pages (github.io) デプロイ対応**:
+  - `vite.config.ts`: `base: process.env.VITE_BASE_PATH || './'` を設定し、`https://<ユーザー名>.github.io/<リポジトリ名>/` のサブパス環境に対応した相対パス解決を実装。
+  - `.github/workflows/deploy.yml`: GitHub Actions による自動ビルド＆Pages公開ワークフローを追加（`main` / `master` ブランチへのプッシュで自動デプロイ）。
+  - `public/.nojekyll`: GitHub Pages の Jekyll 処理によるファイル欠落を防止するファイルを設置。
+  - `public/404.html`: SPA 直接アクセスやリロード時のルーティングエラーを防ぐリダイレクトフォールバックを追加。
+  - `package.json`: `gh-pages` パッケージの導入と `"predeploy"`, `"deploy"` スクリプトを追加。
+  - `README.md`: GitHub Actions および手動デプロイの手順を記載。
+
 ## [1.0.0] - 2026-10-31
 
 ### Added
