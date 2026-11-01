@@ -71,7 +71,7 @@ Robloxで爆発的人気を誇る「ASMRスクイーズ開封シミュレータ�
 
 ## 6. GitHub Pages デプロイ仕様 (github.io Deployment)
 - **Base Path 戦略**: `base: process.env.VITE_BASE_PATH || './'` を設定し、`https://<ユーザー名>.github.io/<リポジトリ名>/` のようなサブディレクトリ配下でも、ルートドメインでもそのまま動作する完全相対パス出力（`./assets/...`）を採用。
-- **CI/CD 自動化**: `.github/workflows/deploy.yml` により、`main` / `master` ブランチへのプッシュ時に自動でビルドおよび GitHub Pages へのデプロイを実行。
+- **CI/CD 自動化**: `.github/workflows/deploy.yml` により、`main` / `master` ブランチへのプッシュ時に自動でビルドおよび GitHub Pages へのデプロイを実行（ロックファイル非依存・`--legacy-peer-deps` フォールバック完備）。
 - **Jekyll 干渉防止**: `public/.nojekyll` を配置し、アンダースコア付きディレクトリやアセットが欠落する問題を防止。
 - **SPA ルーティング保護**: `public/404.html` を配置し、ページリロード時や直接アクセス時にも壊れずSPAへ安全にリダイレクト。
 - **手動デプロイのサポート**: `gh-pages` パッケージを追加し、`npm run deploy` による即時ブランチデプロイも可能。

@@ -2,6 +2,14 @@
 
 All notable changes to the Roblox ASMR Squishy Gacha project are documented below.
 
+## [1.1.1] - 2026-10-31
+
+### Fixed
+- **GitHub Actions ロックファイル欠落エラーの修正**:
+  - `actions/setup-node@v4` において `cache: 'npm'` が `package-lock.json` を必須要件としていたため、「`Dependencies lock file is not found`」エラーが発生していた問題を解消。
+  - `.github/workflows/deploy.yml`: `cache: 'npm'` への依存を解除し、`package-lock.json` の有無に応じて `npm ci --legacy-peer-deps` / `npm install --legacy-peer-deps` を柔軟に切り替えるフォールバック処理を導入。
+  - ルートディレクトリに正式な `package-lock.json` を生成・配置。
+
 ## [1.1.0] - 2026-10-31
 
 ### Added
